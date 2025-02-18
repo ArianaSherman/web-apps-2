@@ -8,12 +8,12 @@
 
 <ul>
   <%for contact in @contacts%>
-  <li><%=contact["first_name"]%> <%=contact["last_name"]%></li>
+  <li><a href="/contacts/<%=contact["id"]%>"><%=contact["first_name"]%> <%=contact["last_name"]%></a></li>
   <%end%>
 </ul>
 
 <p>
-  <a href="/contacts/new">New Contact</a>
+  <a href="/contacts/new?company_id=<%=@company["id"]%>">New Contact</a>
 </p>
 
 <p>
