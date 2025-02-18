@@ -16,12 +16,18 @@ class CompaniesController < ApplicationController
     # render view with new Company form
   end
 
-  # def create
+  def create
   #   # start with a new Company
+  @company=Company.new
   #   # assign user-entered form data to Company's columns
+  @company["name"]=params["name"]
+  @company["city"]=params["city"]
+  @company["state"]=params["state"]
   #   # save Company row
+  @company.save 
   #   # redirect user
-  # end
+  redirect_to
+  end
 
   # def edit
   #   # find a Company
