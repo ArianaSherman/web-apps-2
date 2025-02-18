@@ -1,13 +1,15 @@
 class CompaniesController < ApplicationController
 
   def index
-    # find all Company rows
+    @companies = Company.all
     # render companies/index view
   end
 
   def show
     # find a Company
+    @company=Company.find_by({"id"=>params["id"]})
     # render companies/show view with details about Company
+    @contacts=Contact.where({"company_id"=>@company["id"]})
   end
 
   def new
